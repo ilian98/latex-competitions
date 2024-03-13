@@ -6,26 +6,25 @@
 	bottom=2cm, % Bottom margin
 	left=2cm, % Left margin
 	right=2cm, % Right margin
-	headheight=3cm, % Header height
+	headheight=4.2cm, % Header height
 	%footskip=1.5cm, % Space from the bottom margin to the baseline of the footer
-	headsep=0.5cm, % Space from the top margin to the baseline of the header
+	headsep=0cm, % Space from the top margin to the baseline of the header
 	%showframe, % Uncomment to show how the type block is set on the page
 }
 \usepackage{cmap}
 
-\usepackage[T2A]{fontenc}
-\usepackage[bulgarian]{babel}
+\usepackage[T1,T2A]{fontenc}
 \usepackage{fontspec}
-\setmainfont{Times New Roman}
-\setsansfont{Times New Roman}
-\setmonofont{Courier New}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{Dejavu Sans Mono}
 \usepackage[math-style=TeX]{unicode-math}
 \setmathfont{Latin Modern Math}
 
 \usepackage[nobottomtitles*]{titlesec}
 \titleformat
 {\section} % command
-{\normalfont\fontsize{14}{14}\sffamily\bfseries} % format
+{\normalfont\fontsize{12.5}{12.5}\sffamily\bfseries} % format
 {} % label
 {0pt} % sep
 {} % before-code
@@ -37,11 +36,11 @@
 \usepackage[dvipsnames]{xcolor}
 \titleformat
 {\subsection} % command
-{\fontsize{14}{14}\itshape} % format
+{\fontsize{12.5}{12.5}\itshape} % format
 {} % label
 {0pt} % sep
 {} % before-code
-[\vspace{-1em}{\color{LimeGreen}\rule{0.2\textwidth}{0.2em}}\vspace{-0.7em}] % after-code
+[\vspace{-1em}{\color{RoyalBlue}\rule{0.2\textwidth}{0.2em}}\vspace{-0.7em}] % after-code
 \titlespacing{\subsection}{0pt}{0.5em}{0em}
 
 \setlength{\parskip}{0.5em}
@@ -53,20 +52,25 @@
 \usepackage{setspace}
 \fancyhead[L]{
 	\begin{minipage}{\textwidth}
-		\includegraphics[width=2.5cm]{./logo.jpg}
+		\color{RoyalBlue}\bf{\headerLeft}
+		\vspace{1.7cm}
 	\end{minipage}
 }
-\fancyhead[C]{
+\fancyhead[R]{
 	\begin{minipage}{\textwidth}
-		\centering\large\bf{\header}
-		\vspace{-0.35cm}
+		\includegraphics[width=3cm, right]{./logo.png}
+		\vspace{-0.9cm}
+		\begin{flushright}
+			\color{RoyalBlue}\bf{\headerRight}
+		\end{flushright}
+		\vspace{-0.3cm}
 	\end{minipage}
 }
-\fancyhead[R]{}
 \renewcommand{\headrulewidth}{0cm}
-\fancyheadoffset[L,R]{1cm}
 \usepackage{lastpage}
-\fancyfoot[C]{\thepage\ / \pageref*{LastPage}}
+\fancyfoot[L]{\color{RoyalBlue}Task \problemName}
+\fancyfoot[C]{\color{black}\href{https://iati-shu.org}{iati-shu.org}}
+\fancyfoot[R]{\color{RoyalBlue}Page \thepage\ of \pageref*{LastPage}}
 
 \raggedbottom
 
@@ -106,7 +110,7 @@
 	colorlinks=true,
 	citecolor=blue,
 	linkcolor=blue,
-	urlcolor=cyan,
+	urlcolor=black,
 }
 
 \usepackage{emoji}

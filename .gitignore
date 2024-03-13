@@ -2,3 +2,8 @@
 *.log
 *.out
 *.gz
+iati/*.aux
+iati/*.log
+iati/*.out
+iati/*.gz
+
