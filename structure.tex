@@ -50,7 +50,6 @@
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\usepackage{setspace}
 \fancyhead[L]{
 	\begin{minipage}{\textwidth}
 		\includegraphics[width=2.5cm]{./logo.jpg}
@@ -81,7 +80,7 @@
 \patchcmd\WF@putfigmaybe{\lower\intextsep}{}{}{\fail}
 \AddToHook{env/wrapfigure/begin}{\setlength{\intextsep}{0pt}}
 \makeatother
-\usepackage[inkscapearea=page,inkscapepath=./svg-inkscape]{svg}
+\usepackage[inkscapearea=page, inkscapepath=./svg-inkscape]{svg}
 \svgpath{{./}}
 
 \usepackage{makecell}
@@ -92,13 +91,13 @@
 \usepackage{placeins}
 \usepackage{caption}
 \captionsetup[table]{
-	skip=0.25em,font=it,
-	singlelinecheck=false,justification=justified,indention=-24pt,
+	skip=0.25em, font=it,
+	singlelinecheck=false, justification=justified, indention=-24pt,
 	margin={24pt, 0pt}
 }
 
 \usepackage{enumitem}
-\setlist{itemsep=-0.4em,leftmargin=\parindent,topsep=-\parskip}
+\setlist{itemsep=-0.4em, leftmargin=\parindent, topsep=-\parskip}
 \newcommand{\tabitem}{\indent~~\llap{\textbullet}~~}
 
 \usepackage{hyperref}
