@@ -30,10 +30,14 @@
 {0pt} % sep
 {} % before-code
 \titlespacing{\section}{0pt}{0em}{0em}
+\newcommand{\tl}{}
+\newcommand{\ml}{}
 \newcommand{\problem}[1]{%
 	\section[#1]{#1 \fontsize{12}{12}{\hfill{\normalfont{
 				\emoji{hourglass-not-done}\tl \space\space \emoji{floppy-disk} \ml}}}}
 }
+\newcommand{\sectionbreak}{\clearpage}
+
 \usepackage[dvipsnames]{xcolor}
 \titleformat
 {\subsection} % command
@@ -43,6 +47,16 @@
 {} % before-code
 [\vspace{-1em}{\color{LimeGreen}\rule{0.2\textwidth}{0.2em}}\vspace{-0.7em}] % after-code
 \titlespacing{\subsection}{0pt}{0.5em}{0em}
+
+\newcommand{\formatdate}[3]{#1#2#3} % formats as YYYYMMDD
+\newcommand{\currentdate}{%
+	\formatdate{\the\year}{\ifnum\month<10 0\fi\the\month}{\ifnum\day<10 0\fi\the\day}
+}
+\newcommand{\addauthor}[4]{%
+	\ifnum\currentdate>\formatdate{#2}{#3}{#4}
+	{\noindent\hfill\bfseries{#1}}
+	\fi
+}
 
 \setlength{\parskip}{0.5em}
 \setlength{\parindent}{24pt}
@@ -55,6 +69,7 @@
 		\includegraphics[width=2.5cm]{./logo.jpg}
 	\end{minipage}
 }
+\newcommand{\header}{}
 \fancyhead[C]{
 	\begin{minipage}{\textwidth}
 		\centering\large\bf{\header}
