@@ -25,7 +25,7 @@
 \usepackage[nobottomtitles*]{titlesec}
 \titleformat
 {\section} % command
-{\normalfont\fontsize{14}{14}\sffamily\bfseries} % format
+{\fontsize{14}{14}\sffamily\bfseries} % format
 {} % label
 {0pt} % sep
 {} % before-code
@@ -36,7 +36,7 @@
 	\section[#1]{#1 \fontsize{12}{12}{\hfill{\normalfont{
 				\emoji{hourglass-not-done}\tl \space\space \emoji{floppy-disk} \ml}}}}
 }
-\newcommand{\sectionbreak}{\clearpage}
+\AddToHook{cmd/section/before}{\clearpage}
 
 \usepackage[dvipsnames]{xcolor}
 \titleformat
