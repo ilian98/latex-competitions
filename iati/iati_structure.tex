@@ -28,15 +28,19 @@
 \usepackage[nobottomtitles*]{titlesec}
 \titleformat
 {\section} % command
-{\normalfont\fontsize{12.5}{12.5}\sffamily\bfseries} % format
+{\fontsize{12.5}{12.5}\sffamily\bfseries} % format
 {} % label
 {0pt} % sep
 {} % before-code
 \titlespacing{\section}{0pt}{0em}{0em}
+\newcommand{\tl}{}
+\newcommand{\ml}{}
 \newcommand{\problem}[1]{%
 	\section[#1]{#1 \fontsize{12}{12}{\hfill{\normalfont{
 				\emoji{hourglass-not-done}\tl \space\space \emoji{floppy-disk} \ml}}}}
 }
+\AddToHook{cmd/section/before}{\clearpage}
+
 \usepackage[dvipsnames]{xcolor}
 \titleformat
 {\subsection} % command
@@ -47,19 +51,31 @@
 [\vspace{-1em}{\color{RoyalBlue}\rule{0.2\textwidth}{0.2em}}\vspace{-0.7em}] % after-code
 \titlespacing{\subsection}{0pt}{0.5em}{0em}
 
+\newcommand{\formatdate}[3]{#1#2#3} % formats as YYYYMMDD
+\newcommand{\currentdate}{%
+	\formatdate{\the\year}{\ifnum\month<10 0\fi\the\month}{\ifnum\day<10 0\fi\the\day}
+}
+\newcommand{\addauthor}[4]{%
+	\ifnum\currentdate>\formatdate{#2}{#3}{#4}
+	{\noindent\hfill\bfseries{#1}}
+	\fi
+}
+
 \setlength{\parskip}{0.5em}
 \setlength{\parindent}{24pt}
 \sloppy
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\usepackage{setspace}
+\newcommand{\headerLang}{}
+\newcommand{\headerLeft}{}
 \fancyhead[L]{
 	\begin{minipage}{\textwidth}
 		\color{RoyalBlue}\bf{\headerLeft}
 		\vspace{1.7cm}
 	\end{minipage}
 }
+\newcommand{\headerRight}{}
 \fancyhead[R]{
 	\begin{minipage}{\textwidth}
 		\includegraphics[width=3cm, right]{./logo.png}
@@ -67,11 +83,12 @@
 		\begin{flushright}
 			\color{RoyalBlue}\bf{\headerRight}
 		\end{flushright}
-		\vspace{-0.3cm}
+		\vspace{-0.2cm}
 	\end{minipage}
 }
 \renewcommand{\headrulewidth}{0cm}
 \usepackage{lastpage}
+\newcommand{\problemName}{}
 \fancyfoot[L]{\color{RoyalBlue}Task \problemName}
 \fancyfoot[C]{\color{black}\href{https://iati-shu.org}{iati-shu.org}}
 \fancyfoot[R]{\color{RoyalBlue}Page \thepage\ of \pageref*{LastPage}}
@@ -89,7 +106,7 @@
 \patchcmd\WF@putfigmaybe{\lower\intextsep}{}{}{\fail}
 \AddToHook{env/wrapfigure/begin}{\setlength{\intextsep}{0pt}}
 \makeatother
-\usepackage[inkscapearea=page,inkscapepath=./svg-inkscape]{svg}
+\usepackage[inkscapearea=page, inkscapepath=./svg-inkscape]{svg}
 \svgpath{{./}}
 
 \usepackage{makecell}
@@ -100,13 +117,13 @@
 \usepackage{placeins}
 \usepackage{caption}
 \captionsetup[table]{
-	skip=0.25em,font=it,
-	singlelinecheck=false,justification=justified,indention=-24pt,
+	skip=0.25em, font=it,
+	singlelinecheck=false, justification=justified, indention=-24pt,
 	margin={24pt, 0pt}
 }
 
 \usepackage{enumitem}
-\setlist{itemsep=-0.4em,leftmargin=\parindent,topsep=-\parskip}
+\setlist{itemsep=-0.4em, leftmargin=\parindent, topsep=-\parskip}
 \newcommand{\tabitem}{\indent~~\llap{\textbullet}~~}
 
 \usepackage{hyperref}
