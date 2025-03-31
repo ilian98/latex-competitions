@@ -6,7 +6,7 @@
 	bottom=2cm, % Bottom margin
 	left=2cm, % Left margin
 	right=2cm, % Right margin
-	headheight=4.2cm, % Header height
+	headheight=4cm, % Header height
 	%footskip=1.5cm, % Space from the bottom margin to the baseline of the footer
 	headsep=0cm, % Space from the top margin to the baseline of the header
 	%showframe, % Uncomment to show how the type block is set on the page
@@ -79,11 +79,12 @@
 \fancyhead[R]{
 	\begin{minipage}{\textwidth}
 		\includegraphics[width=3cm, right]{./logo.png}
-		\vspace{-0.9cm}
-		\begin{flushright}
+		\par
+		\begin{raggedleft}
 			\color{RoyalBlue}\bf{\headerRight}
-		\end{flushright}
-		\vspace{-0.2cm}
+		\par
+		\end{raggedleft}
+		\vspace{0.15cm}
 	\end{minipage}
 }
 \renewcommand{\headrulewidth}{0cm}
