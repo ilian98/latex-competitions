@@ -69,22 +69,23 @@
 \pagestyle{fancy}
 \newcommand{\headerLang}{}
 \newcommand{\headerLeft}{}
-\fancyhead[L]{
+\fancyhead[L]{%
 	\begin{minipage}{\textwidth}
-		\color{RoyalBlue}\bf{\headerLeft}
+		\color{RoyalBlue}\bf{
+			\headerLeft\\
+			\emoji{globe-with-meridians} \normalfont{\headerLang}
+		}
 		\vspace{1.7cm}
 	\end{minipage}
 }
-\newcommand{\headerRight}{}
-\fancyhead[R]{
+\newcommand{\headerRightFirst}{}
+\newcommand{\headerRightSecond}{}
+\fancyhead[R]{%
 	\begin{minipage}{\textwidth}
 		\includegraphics[width=3cm, right]{./logo.png}
-		\par
-		\begin{raggedleft}
-			\color{RoyalBlue}\bf{\headerRight}
-		\par
-		\end{raggedleft}
-		\vspace{0.15cm}
+		\makebox[\linewidth][r]{\color{RoyalBlue}\bf\headerRightFirst}
+		\makebox[\linewidth][r]{\color{RoyalBlue}\bf\headerRightSecond}
+		\vspace{-0.35cm}
 	\end{minipage}
 }
 \renewcommand{\headrulewidth}{0cm}
