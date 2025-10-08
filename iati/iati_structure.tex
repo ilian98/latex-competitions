@@ -65,6 +65,21 @@
 \setlength{\parindent}{24pt}
 \sloppy
 
+\usepackage{listings}
+\definecolor{lstbg}{RGB}{250,250,252}
+\definecolor{lstframe}{RGB}{220,220,225}
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{lstbg},
+	frame=single,
+	rulecolor=\color{lstframe},
+	basicstyle=\ttfamily\small,
+	keywordstyle=\bfseries,
+	breaklines=true,
+	aboveskip=0.5\baselineskip,
+	belowskip=0\baselineskip  
+}
+\lstset{style=mystyle, language=C++}
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \newcommand{\headerLang}{}
@@ -126,6 +141,7 @@
 
 \usepackage{enumitem}
 \setlist{itemsep=-0.4em, leftmargin=\parindent, topsep=-\parskip}
+\AfterEndEnvironment{itemize}{\vspace{\parskip}}
 \newcommand{\tabitem}{\indent~~\llap{\textbullet}~~}
 
 \usepackage{hyperref}

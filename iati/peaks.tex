@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 \input{iati_structure.tex}
-\renewcommand{\bottomtitlespace}{3cm}
+\renewcommand{\bottomtitlespace}{2cm}
 
 \usepackage[bulgarian]{babel}
 
@@ -10,13 +10,13 @@
 \renewcommand{\problemName}{?. PEAKS}
 
 \renewcommand{\headerLeft}{IATI Day 1, Senior group}
-\renewcommand{\headerRightFirst}{XVI INTERNATIONAL ADVANCED TOURNAMENT IN INFORMATICS}
-\renewcommand{\headerRightSecond}{SHUMEN 2025}
+\renewcommand{\headerRightFirst}{XVII INTERNATIONAL ADVANCED TOURNAMENT IN INFORMATICS}
+\renewcommand{\headerRightSecond}{BURGAS 2026}
 
 \renewcommand{\tl}{$3$ сек.}
 \renewcommand{\ml}{$256$ MB}
 \problem{Задача \problemName}
-\addauthor{Автор: Автор Авторов}{2025}{04}{12}
+\addauthor{Автор: Автор Авторов}{2026}{04}{19}
 
 Можем да представим Стара планина като редица от $N$ върха във вертикална равнина. Да ги наречем просто „върхове“. Върховете са номерирани с числата от $1$ до $N$. Връх $i$ има координати $(i, h_i)$. Стойността $h_i$ отбелязва надморската височина на връх $i$. Гарантирано е, че $h_1, h_2, \dots, h_ N$ образуват пермутация на числата $1, 2, \dots,  N$. За всяко $i$ $(1 \le i \le  N)$, върховете $i$ и $i+1$ са свързани с отсечка. Понеже ще се движим нощно време по върховете, то за да стигнем до някоя част на планината трябва да имаме поне един работещ фенер. За щастие има $K$ фенера на разположение за купуване. За всяко $j$ $(1 \le j \le k)$, фенер $j$ може да бъде купен на връх $p_j$ за $c_j$ лева. За съжаление, фенерът $j$ работи само когато текущата надморска височина е в интервала $[a_j; b_j]$. С други думи, когато текущата надморска височина е строго по-малка от $a_j$ или строго по-голяма от $b_j$, фенерът $j$ не работи. Имайте предвид, че фенерите не се чупят, когато напуснат обхвата си. Например, когато височината надвишава $b_j$, фенерът $j$ ще спре да работи, но щом се върнем на височина $b_j$, фенерът ще започне да работи отново.
 
